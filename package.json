@@ -4,6 +4,7 @@
   "description": "Display stats for Gulp tasks",
   "main": "index.js",
   "scripts": {
+    "cover": "istanbul cover _mocha",
     "pretest": "jshint **/*.js",
     "test": "mocha"
   },
@@ -27,6 +28,7 @@
     "text-table": "^0.2.0"
   },
   "devDependencies": {
+    "istanbul": "0.4.5",
     "jshint": "^2.6.0",
     "mocha": "3.2.0",
     "sinon": "1.17.6"
