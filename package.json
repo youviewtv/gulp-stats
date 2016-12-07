@@ -4,8 +4,8 @@
   "description": "Display stats for Gulp tasks",
   "main": "index.js",
   "scripts": {
-    "pre-test": "jshint *.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "jshint **/*.js",
+    "test": "mocha"
   },
   "keywords": [
     "gulp",
@@ -27,7 +27,9 @@
     "text-table": "^0.2.0"
   },
   "devDependencies": {
-    "jshint": "^2.6.0"
+    "jshint": "^2.6.0",
+    "mocha": "3.2.0",
+    "sinon": "1.17.6"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,7 @@
     "immed": true,
     "indent": 4,
     "latedef": true,
+    "mocha": true,
     "newcap": true,
     "noarg": true,
     "node": true,
