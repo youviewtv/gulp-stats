@@ -4,9 +4,9 @@
   "description": "Display stats for Gulp tasks",
   "main": "index.js",
   "scripts": {
-    "cover": "istanbul cover _mocha",
+    "cover": "istanbul cover _mocha -- --recursive",
     "pretest": "jshint **/*.js",
-    "test": "mocha"
+    "test": "mocha --recursive"
   },
   "keywords": [
     "gulp",

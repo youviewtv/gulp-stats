@@ -57,10 +57,12 @@ function formatTable(data) {
     return table(outTable, tableOpts);
 }
 
-module.exports = function defaultReporter(data) {
+module.exports = function defaultReporter(data, logger) {
+    var plural = (data.stats.length === 1 ? '' : 's');
     // Overview
-    console.log('\nGulp ran', chalk.cyan.bold(data.stats.length + ' task' + (data.stats.length === 1 ? '' : 's')), 'in', chalk.cyan.bold(prettyTime(data.totalTime)));
-
+    var overview = ['Gulp ran', chalk.cyan.bold(data.stats.length + ' task' + plural), 'in', chalk.cyan.bold(prettyTime(data.totalTime))];
     // Display table
-    console.log('\n' + formatTable(data) + '\n');
+    var table = formatTable(data);
+
+    (logger || console).log('\n' + overview.join(' ') + '\n\n' + table + '\n');
 };
